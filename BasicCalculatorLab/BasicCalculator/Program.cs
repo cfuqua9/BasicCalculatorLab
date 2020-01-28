@@ -6,19 +6,34 @@ namespace BasicCalculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("*** BASIC CALCULATOR ***");
+            Console.WriteLine("*** BASIC WEATHER CALCULATOR ***");
 
-            Console.WriteLine("Enter the first number");
+            //declare some vairabes
+            string input;
+            int temp;
+            int relHumidity;
+            int dewpoint;
 
-            // int.Parse will take a string data type and convert it to an int data type
-            int firstNumber = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter the second number");
-            int secondNumber = int.Parse(Console.ReadLine());
+            // Ask the user for the temp
+            Console.WriteLine("Enter a Temperature");
+            input = Console.ReadLine();
+            temp = int.Parse(input);
 
-            int sum = firstNumber + secondNumber;
+            // Ask them for rell humidity
+            Console.WriteLine("Enter RH");
+            input = Console.ReadLine();
+            relHumidity = int.Parse(input);
 
-            Console.WriteLine("The answer is " + sum);
+            // calculate the dew point
+            dewpoint = temp - 9 * (100 - relHumidity) / 25;
+
+            // print the dew point
+            Console.WriteLine("dewpoint=" + dewpoint);
+            // ask for the windspeed
+
+            // calculate windchill
+
         }
     }
 }
